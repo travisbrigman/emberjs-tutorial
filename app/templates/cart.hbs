@@ -14,7 +14,7 @@
         <img src={{item.image}} alt='' />
       </div>
       <div class='ml-3'>
-        <h4>{{item.name}}</h4>
+        <h4 data-test-item-name>{{item.name}}</h4>
         <i class='font-weight-bold'>{{currency item.price}}</i>
       </div>
       <input
@@ -28,15 +28,15 @@
   <section class='w-5 ml-auto text-right mb-5'>
     <div class='row'>
       <span class='col'>Subtotal</span>
-      <span class='col'>{{currency this.subtotal}}</span>
+      <span data-test-subtotal class='col'>{{currency this.subtotal}}</span>
     </div>
     <div class='row'>
       <span class='col'>Tax</span>
-      <span class='col'>{{currency this.tax}}</span>
+      <span data-test-tax class='col'>{{currency this.tax}}</span>
     </div>
     <div class='row'>
       <span class='col'>Total </span>
-      <span class='col'>{{currency this.total}}</span>
+      <span data-test-total class='col'>{{currency this.total}}</span>
     </div>
   </section>
   <button type='button' class='btn btn-success float-right'>Checkout</button>

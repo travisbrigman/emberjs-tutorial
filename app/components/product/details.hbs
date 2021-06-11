@@ -12,8 +12,8 @@
   </section>
   {{!PRICE}}
   <section class={{unless @isDetails 'h4'}}>
-    <del class='small text-black-50'>{{currency @price.original}}</del>
-    <i class='text-danger font-weight-bold'>{{currency @price.current}}</i>
+    <del data-test-original-price class='small text-black-50'>{{currency @price.original}}</del>
+    <i data-test-current-price class='text-danger font-weight-bold'>{{currency @price.current}}</i>
   </section>
 
   {{#if @isDetails}}
@@ -21,13 +21,13 @@
       <h5>Color</h5>
       <div class='product-colors active-{{@color}}'>
         {{#each @colors as |colorInfo|}}
-          <span
+          <span data-test-color
             class='product-color {{concat 'color-' colorInfo.color}}'
             {{on 'click' (fn @onChangeColor colorInfo.color)}}
           ></span>
         {{/each}}
       </div>
-      <button class='btn btn-info' type='button' {{on "click" this.addToCart}}><FaIcon
+      <button data-test-add-to-cart class='btn btn-info' type='button' {{on "click" this.addToCart}}><FaIcon
           @icon='shopping-cart'
         />
         Add to Cart</button>

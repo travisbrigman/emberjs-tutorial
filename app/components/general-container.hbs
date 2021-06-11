@@ -1,7 +1,7 @@
-<LinkTo @route='cart' class='cart-link'>
+<LinkTo data-test-cart-link @route='cart' class='cart-link'>
   <FaIcon @icon='shopping-cart' />
   {{#if this.shoppingCart.itemList.length}}
-    <span
+    <span data-test-cart-count
       class='cart-count d-inline-flex justify-content-center align-items-center'
     >
       {{this.itemCount}}
